@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<h2 style="color:green; text-align:center;" class="page-header">{{the_word}}</h2>
+		<table class="table table-striped">
+		{% for piece in the_entry %}
+			<tr><td>{{piece.content}}</td> <td>{{piece.username}}</td> <td>{{piece.pub_date}}</td></tr> 
+		{% empty %}
+			<div class="alert alert-info">Hiç  alt konu yok.</div>
+		{% endfor %}
+		</table>
+
+{% if logged %}
+<form class="well" method="post" action="{% url word the_word %}">
+	{% csrf_token %}	
+    <label>Yeni Girdi</label>
+    <input type="text" name="yeni" class="large" style="height:30px"/>
+	<button type="submit" class="btn btn-primary">Gönder</button> 
+</form>
+{% endif %}
+{% endblock %}

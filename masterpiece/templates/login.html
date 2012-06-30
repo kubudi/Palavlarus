@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row">
+	<div class="span12">
+		<form class="well" method="post" action="{% url giris %}">
+			{% csrf_token %}
+		    <input type="text" name="username" class="large" style="height:30px" placeholder="Kullanıcı Adı"/>
+		    <input type="password" name="password" class="large" style="height:30px" placeholder="Şifre"/>
+			<button type="submit" class="btn btn-primary">Giriş</button> 
+		</form>
+	</div>
+</div>
+{% endblock %}

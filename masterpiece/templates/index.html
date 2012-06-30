@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+<div class="row">
+	<div class="span12">
+		<table class="table table-striped">
+			{% for piece in all_pieces %}
+			<tr>
+				<td><a href="{% url word piece.word %}"><i class="icon-play"></i> {{piece.word}}</a></td>
+			</tr>
+			{% empty %}
+			<tr><td>Hiç Konu yok.</td></tr>
+			{% endfor %}
+		</table>
+	</div>
+</div>
+{% endblock %}

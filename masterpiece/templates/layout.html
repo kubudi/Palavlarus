@@ -1,0 +1,26 @@
+<html>
+<head>
+	<meta charset="utf-8" />
+	<link href="/static/bootstrap/css/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="container">
+	<div class="row">
+		<div class="span6">
+			<h1 style="color:red;" class="page-header">PALAVLARUS</h1>
+		</div>
+		<div class="span6" >
+			<div style="text-align:right;">
+				<a href="{% url home %}" class="btn btn-success"><i class="icon-bookmark icon-white"></i> Ana Sayfa</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container" >
+	{% block main %}{% endblock %}
+</div>
+
+</body>
+</html>
