@@ -10,9 +10,22 @@
 		<div class="span6">
 			<h1 style="color:red;" class="page-header">PALAVLARUS</h1>
 		</div>
-		<div class="span6" >
+		{% if not logged %}
+		<div class="span3" >
 			<div style="text-align:right;">
-				<a href="{% url home %}" class="btn btn-success"><i class="icon-bookmark icon-white"></i> Ana Sayfa</a>
+				<a href="{% url giris %}" class="btn btn-success"><i class="icon-pencil icon-white"></i> Giriş Yap</a>
+			</div>
+		</div>
+		{% else %}
+		<div class="span3" >
+			<div style="text-align:right;">
+				<a href="{% url cikis %}" class="btn btn-danger"><i class="icon-remove-sign icon-white"></i> {{ the_logged }} : Çıkış Yap</a>
+			</div>
+		</div>
+		{% endif %}
+		<div class="span3" >
+			<div style="text-align:right;">
+				<a href="{% url home %}" class="btn btn-primary"><i class="icon-bookmark icon-white"></i> Ana Sayfa</a>
 			</div>
 		</div>
 	</div>

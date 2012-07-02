@@ -10,6 +10,7 @@ urlpatterns = patterns('',
     # url(r'^palavlarus/', include('palavlarus.foo.urls')),
     url(r'^palavlarus/$', 'masterpiece.views.home', name='home'),
     url(r'^palavlarus/login/$', 'masterpiece.views.log_it', name='giris'),
+    url(r'^palavlarus/cikis/$', 'masterpiece.views.logout_it', name='cikis'),
     url(r'^palavlarus/(?P<the_word>.*)/$', 'masterpiece.views.word', name='word'),
 
     # Uncomment the admin/doc line below to enable admin documentation:

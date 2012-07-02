@@ -3,6 +3,7 @@
 {% block main %}
 <div class="row">
 	<div class="span12">
+		<label style="color:red;">{{ hata }}</label>
 		<form class="well" method="post" action="{% url giris %}">
 			{% csrf_token %}
 		    <input type="text" name="username" class="large" style="height:30px" placeholder="Kullanıcı Adı"/>
